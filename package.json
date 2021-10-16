@@ -11,5 +11,8 @@
     "url": "(https://github.com/pedrobmac/nodejs-api-rest.git)"
   },
   "author": "pedro bittencourt",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
