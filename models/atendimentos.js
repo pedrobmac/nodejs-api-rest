@@ -4,16 +4,11 @@ const conexao = require("../infraestrutura/conexao")
 class Atendimento {
     adiciona(atendimento, res) {
         const dataCriacao = moment().format("YYYY-MM-DD HH:MM:SS")
-        const data = moment(atendimento.data, "DD/MM/YYYY HH:MM").format("YYYY-MM-DD HH:MM:SS")
+        const data = moment(atendimento.data, "DD/MM/YYYY").format("YYYY-MM-DD HH:MM:SS")
 
         //validar dados de entrada
         const dataValida = moment(data).isSameOrAfter(dataCriacao)
         const clienteValido = atendimento.cliente.length >= 3
-
-        //debug de data
-        // console.log("Data: ", data)
-        // console.log("Data criação: ", dataCriacao)
-        // console.log("Data válida? ", dataValida)
 
         const validacoes = [{
             nome: "data",
